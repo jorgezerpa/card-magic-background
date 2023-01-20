@@ -1,0 +1,144 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(90deg, #eee, #fff, #eee);
+}
+
+.header {
+    min-height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.header h2 {
+    padding: 60px 10px;
+    padding-bottom: 0;
+    text-align: center;
+    max-width: 400px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #222;
+}
+
+
+.cardsContainer {
+    margin-bottom: 100px;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 1s all;
+}
+
+.cardsContainer>div {
+    flex: 1;
+    border: 1px solid #ccc;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:0
+}
+
+.cardsContainer .cardContent h4 {
+    width: 100%;
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 40px 0px;
+    background: rgba(0,0,0,.6);
+}
+
+.cardsContainer .cardContent p {
+    transition: all 1s;
+}
+
+
+.description {
+    transition: all 1s;
+    margin: 0;
+    padding: 50px 20px;
+    background: white;
+    color: #333;
+    font-size: 12px;
+    font-weight: 100;
+    letter-spacing: .2px;
+    line-height: 1.2rem;
+    text-align: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    margin: 0 auto;
+    background-color: aqua;
+    background: linear-gradient(70deg, rgb(0,255,255), rgb(13, 197, 197));
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    font-weight: 20px;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 2px 5px 0px #888;
+}
+
+.cardsContainer>div:hover > div {
+    transform: translateY(-20px);
+    transition: all 1s;
+}
+
+.cardsContainer>div:hover>div .description {
+    transform: scaleY(1);
+}
+
+@media screen and (max-width:750px) {
+    .cardsContainer {
+        overflow-x: hidden;
+        flex-direction: column;
+        height: auto;
+    }
+    .cardsContainer .cardContent {
+        background: rgba(0,0,0,.4);
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+    }
+    .cardsContainer .cardContent h4 {
+        padding: 0;
+        padding-bottom: 10px;
+        background-color: transparent;
+    }
+    .description{
+        background: none;
+        padding: 0;
+    }
+    .description p{
+        display: none;
+    }
+
+    .cardsContainer>div:hover > div {
+        transform: translateY(-0px);
+        transition: all 1s;
+    }
+}
